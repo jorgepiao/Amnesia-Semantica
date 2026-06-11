@@ -1,0 +1,16 @@
+# Entorno virtual
+venv/
+.env
+
+# Python cache
+__pycache__/
+*.py[cod]
+*.egg-info/
+dist/
+
+# ChromaDB persistente
+chroma_db/
+
+# Sistema
+.DS_Store
+Thumbs.db
