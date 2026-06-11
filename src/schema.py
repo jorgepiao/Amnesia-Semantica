@@ -16,7 +16,7 @@ class DetectorOutput(BaseModel):
 
 
 class ChronoRAGState(BaseModel):
-    user_query: str
+    user_query: str = Field(..., max_length=500, description="Consulta del usuario, máxima 500 caracteres")
     retrieved_docs: List[RetrievedDocument] = Field(default_factory=list)
     conflict_detected: bool = False
     obsolete_doc_ids: List[str] = Field(default_factory=list)

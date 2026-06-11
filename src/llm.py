@@ -38,8 +38,11 @@ class LLMClient:
                 temperature=temperature,
             )
             return resp.choices[0].message.content.strip()
-        except Exception as e:
-            raise RuntimeError(f"Error en llamada a LLM: {e}")
+        except Exception:
+            raise RuntimeError(
+                "Error en la comunicación con el modelo de lenguaje (LLM). "
+                "Verifica tu conexión a internet y que la API key de OpenAI sea válida."
+            )
 
 
 llm = LLMClient()
